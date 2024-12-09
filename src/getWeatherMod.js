@@ -9,13 +9,14 @@ export async function getWeather(locationInput) {
   //declare in larger scope to return status if error
   let weatherData;
   const unitGroup = getSelectedUnits();
+  const today = getTodaysDate();
 
   try {
     //get today date
     //get units
     //unit group is uk vs us for cel and far
     weatherData = await fetch(
-      `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${locationInput}/2024-12-09?unitGroup=${unitGroup}&key=3LTVBASAQ7PVLZQWD6V4TN9MQ`
+      `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${locationInput}/${today}?unitGroup=${unitGroup}&key=3LTVBASAQ7PVLZQWD6V4TN9MQ`
       // `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/54981/2024-12-09?unitGroup=uk&key=3LTVBASAQ7PVLZQWD6V4TN9MQ`
     );
 
@@ -57,6 +58,12 @@ function getSelectedUnits() {
   ).value;
 
   return selectedUnits;
+}
+
+function getTodaysDate() {
+  const today = new Date();
+  const formattedDate = today.toISOString().split("T")[0];
+  return formattedDate;
 }
 
 //no need for abstract?
