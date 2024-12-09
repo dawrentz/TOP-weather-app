@@ -3,10 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>newProject</title>
+    <title>The Offical Mason Storm Weather App</title>
   </head>
   <body>
-    <!-- test -->
-    hello
+    <h1>The Offical Mason Storm Weather App</h1>
+    <div>There a <i>Storm</i> coming...</div>
+    <div>Find out where below!</div>
+    <form novalidate>
+      <fieldset>
+        <input
+          type="text"
+          name="location-input"
+          id="location-input"
+          placeholder="Enter search location"
+        />
+        <button id="weather-search-btn">
+          What's the weather like, Mason?!
+        </button>
+      </fieldset>
+    </form>
+    <div id="weather-results">weather results</div>
+    <div class="disclaimer">
+      Mason may or may not actually know the weather at any given time
+    </div>
   </body>
 </html>
