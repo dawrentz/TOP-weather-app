@@ -11,6 +11,27 @@
     <div>Find out where below!</div>
     <form novalidate>
       <fieldset>
+        <div class="form-line" id="unit-input-form-section">
+          <label for="f-unit-input">
+            F°
+            <input
+              type="radio"
+              name="unit-input"
+              id="f-unit-input"
+              value="us"
+              checked
+            />
+          </label>
+          <label for="c-unit-input">
+            C°
+            <input
+              type="radio"
+              name="unit-input"
+              id="c-unit-input"
+              value="uk"
+            />
+          </label>
+        </div>
         <input
           type="text"
           name="location-input"
@@ -26,6 +47,11 @@
     <div class="disclaimer">
       Disclaimer: The real Mason may or may not actually know the weather at any
       given time.
+    </div>
+    <div class="disclaimer">
+      Disclaimer #2: On the off chance that the real Mason actually did know the
+      weather, it is merely a coinsidence and IT'S FAMILY TIME LLC does not
+      claim responsibility for said weather.
     </div>
   </body>
 </html>

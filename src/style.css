@@ -4,10 +4,14 @@
 
 :root {
   /* variables */
+  --spacing: 1rem;
 
   /* debugging */
   * {
     /* outline: solid red 1px; */
-    background-color: aquamarine;
   }
+}
+
+body {
+  background-color: aquamarine;
 }

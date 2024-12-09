@@ -2,6 +2,7 @@
 
 //imports
 import "./style.css";
+import * as getWeatherMod from "./getWeatherMod.js";
 
 //declarations
 
@@ -13,7 +14,5 @@ const searchWeatherBtn = document.querySelector("#weather-search-btn");
 searchWeatherBtn.addEventListener("click", (event) => {
   //stop form submit
   event.preventDefault();
-
-  const weatherJSON = getWeather(getLocationInput());
-  weatherJSON.then(console.log);
+  getWeatherMod.reportWeather();
 });
