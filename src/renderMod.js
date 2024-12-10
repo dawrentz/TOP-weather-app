@@ -17,7 +17,32 @@ export function showWeatherReport() {
   const searchInput = getLocationInput();
   const weatherReport = getWeatherMod.getWeather(searchInput);
 
-  weatherReport.then(handleWeatherReport);
+  weatherReport.then(handleWeatherReport).catch(handleWeatherReportError);
+  //   weatherReport.then(console.log("from then"));
+}
+
+export function renderWeatherInfo(
+  conditions,
+  temp,
+  resolvedAddress,
+  unitGroup,
+  emoji,
+  quote,
+  quoteSrc
+) {
+  conditionReportElm.textContent = conditions;
+  reportAddressElm.textContent = resolvedAddress;
+  weatherEmojiElm.textContent = emoji;
+  masonQuoteElm.textContent = quote;
+  masonQuoteSrcElm.textContent = quoteSrc;
+
+  if (unitGroup === "us") {
+    tempuratureReportElm.textContent = `${temp} F°`;
+  } else if (unitGroup === "uk") {
+    tempuratureReportElm.textContent = `${temp} C°`;
+  } else {
+    tempuratureReportElm.textContent = temp;
+  }
 }
 
 // ====================================== Lesser Functions ====================================== //
@@ -38,27 +63,22 @@ function handleWeatherReport(weatherObj) {
   );
 }
 
-//export out for demo?
-function renderWeatherInfo(
-  conditions,
-  temp,
-  resolvedAddress,
-  unitGroup,
-  emoji,
-  quote,
-  quoteSrc
-) {
-  conditionReportElm.textContent = conditions;
-  reportAddressElm.textContent = resolvedAddress;
-  weatherEmojiElm.textContent = emoji;
-  masonQuoteElm.textContent = quote;
-  masonQuoteSrcElm.textContent = quoteSrc;
+function handleWeatherReportError(error) {
+  //could check for error number, 400 = bad search, 429 = too many searches
+  // console.log(error);
 
-  if (unitGroup === "us") {
-    tempuratureReportElm.textContent = `${temp} F°`;
-  } else if (unitGroup === "uk") {
-    tempuratureReportElm.textContent = `${temp} C°`;
-  }
+  const { emoji, emojiDescript } = getEmoji("error");
+  const { quote, quoteSrc } = getMasonQuote(emojiDescript);
+
+  renderWeatherInfo(
+    "", // conditions
+    "", // temp
+    "Invalid Search", // resolvedAddress
+    "", // unitGroup
+    emoji, // emoji
+    quote, // quote
+    quoteSrc // quoteSrc
+  );
 }
 
 function getEmoji(conditions) {
@@ -192,7 +212,7 @@ function getMasonQuote(emoji) {
   //cloud
   //   if (emoji === "☁️") {
   if (emoji === "cloud") {
-    quote = `"I can't see it... the vision... it's too cloudy!"`;
+    quote = `"The vision... it's too cloudy... I can't see it!"`;
     quoteSrc = `Taken 8: Kidnapped in Space (cameo)`;
   }
 
@@ -206,14 +226,14 @@ function getMasonQuote(emoji) {
   //sun
   //   if (emoji === "☀️") {
   if (emoji === "sun") {
-    quote = `"The sun'll never set on your grave... Cause there'll be nothin' left!"`;
+    quote = `"The sun'll never set on your grave... cause there'll be nothin' left!"`;
     quoteSrc = `Mason Storm: The Final Chapter IV`;
   }
 
   //clear
   //   if (emoji === "🌄") {
   if (emoji === "clear") {
-    quote = `"I'm here to clear your conscious... with my .45 automatic..."`;
+    quote = `"I'm here to clear your conscience... with my .45 automatic..."`;
     quoteSrc = `2 Seconds 2 Midnight 2`;
   }
 
@@ -233,47 +253,3 @@ function getLocationInput() {
   const searchInput = locationInputElm.value;
   return searchInput;
 }
-
-// function handleWeatherError
-
-// all weather conditions common weather keywords:
-// rain
-// drizzle
-// precipitation
-
-// storm
-// thunder
-//"There's a STORM comin'!!!"  - from Mason Storm (Theatrical Cut)
-
-// snow
-// hail
-// ice
-// "It'll be a cold day in Honolulu before you kill me!" - from Mason Storm: A Time to Die
-
-// fog
-// "This haze really takes me back... keep your eyes peeled..." from Mason Storm: Return to Vietnam
-
-// dust
-// smoke
-// "See the smoke up on the horizon? That's Comanche..." from Mason Storm Tames the West (TV Special)
-
-// squalls
-// wind
-// "Gimme a jacket. Leather. Black." from Mason Storm: UNLEASHED (S1E8)
-
-// clear
-// "I'm here to clear your conscious... with my .45 automatic..." from 2 Seconds 2 Midnight 2
-
-// cloud
-// overcast
-// cover
-// "I can't see it... the vision... it's too cloudy!" cameo from Taken 8: Kidnapped in Space
-
-// tornado
-// "I don't think were in Brooklyn anymore, Toto" from Mason Storm 2: Lost in Time (1999)
-
-// sun
-// "The sun'll never set on your grave... Cause there'll be nothin' left!" from Mason Storm: The Final Chapter IV
-
-//error
-//"What the hell are you doin'?" from Mason Storm: The Comeback II

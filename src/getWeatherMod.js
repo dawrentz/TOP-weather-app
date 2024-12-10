@@ -45,22 +45,17 @@ export async function getWeather(locationInput) {
     return weatherResultsObject;
   } catch (err) {
     //needs work
-    console.log(weatherData.status);
+    // console.log(weatherData.status);
+    throw weatherData.status;
     // throw err;
     //return err means handling error outside of catch (needed because splitting getWeather and renderWeather?)
+    //return also means "the promise is 'resolved', not 'rejected'" (screws up .then in the funciton call)
     //return status also?
-    return err;
+    // return err;
   }
 }
 
 // ====================================== Event Listeners ====================================== //
-
-//needs run through renderMod?
-export function reportWeather() {
-  const searchInput = getLocationInput();
-  // const weatherObj = getWeather(searchInput);
-  weatherObj.then(console.log);
-}
 
 // ====================================== Lesser Functions ====================================== //
 
