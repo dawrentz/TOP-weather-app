@@ -6,10 +6,13 @@
     <title>The Offical Mason Storm Weather App</title>
   </head>
   <body>
-    <h1>The Offical Mason Storm Weather App</h1>
-    <div>There a <i>Storm</i> coming...</div>
-    <div>Find out where below!</div>
-    <form novalidate>
+    <div id="title-seciton">
+      <h1>The Offical Mason Storm Weather App</h1>
+      <div>There a <i>Storm</i> coming...</div>
+      <div>Find out where below!</div>
+    </div>
+
+    <form id="weather-report-form" novalidate>
       <fieldset>
         <div class="form-line" id="unit-input-form-section">
           <label for="f-unit-input">
@@ -43,7 +46,27 @@
         </button>
       </fieldset>
     </form>
-    <div id="weather-results">weather results</div>
+    <div id="weather-results-section">
+      <div id="weather-card">
+        <div id="report-address">
+          <!-- from js -->
+        </div>
+        <div id="condition-report">
+          <!-- from js -->
+        </div>
+        <div id="temp-report">
+          <!-- from js -->
+        </div>
+        <div id="weather-emoji">
+          <!-- from js -->
+        </div>
+        <div id="mason-quote">
+          <!-- from js -->
+        </div>
+      </div>
+    </div>
+
+    <!-- disclaimers -->
     <div class="disclaimer">
       Disclaimer: The real Mason may or may not actually know the weather at any
       given time.
