@@ -17,7 +17,7 @@ export async function getWeather(locationInput) {
   try {
     //using free api
     weatherData = await fetch(
-      `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${locationInput}/${today}?unitGroup=${unitGroup}&key=3LTVBASAQ7PVLZQWD6V4TN9MQ`
+      `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${locationInput}/${today}?unitGroup=${unitGroup}&lang=en&key=3LTVBASAQ7PVLZQWD6V4TN9MQ`
     );
     const weatherJSON = await weatherData.json();
 
@@ -44,14 +44,9 @@ export async function getWeather(locationInput) {
 
     return weatherResultsObject;
   } catch (err) {
-    //needs work
-    // console.log(weatherData.status);
-    throw weatherData.status;
-    // throw err;
     //return err means handling error outside of catch (needed because splitting getWeather and renderWeather?)
     //return also means "the promise is 'resolved', not 'rejected'" (screws up .then in the funciton call)
-    //return status also?
-    // return err;
+    throw weatherData.status;
   }
 }
 

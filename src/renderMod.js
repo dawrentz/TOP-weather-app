@@ -87,16 +87,6 @@ function getEmoji(conditions) {
   let emoji = "🚫";
   let emojiDescript = "error";
 
-  //rain
-  if (
-    formatCond.includes("rain") ||
-    formatCond.includes("drizzle") ||
-    formatCond.includes("precipitation")
-  ) {
-    emoji = "☔";
-    emojiDescript = "rain";
-  }
-
   //wind
   if (formatCond.includes("wind") || formatCond.includes("squall")) {
     emoji = "️💨";
@@ -133,6 +123,17 @@ function getEmoji(conditions) {
   ) {
     emoji = "️☁️";
     emojiDescript = "cloud";
+  }
+
+  //rain
+  //"rain" takes presidence over "cloud"
+  if (
+    formatCond.includes("rain") ||
+    formatCond.includes("drizzle") ||
+    formatCond.includes("precipitation")
+  ) {
+    emoji = "☔";
+    emojiDescript = "rain";
   }
 
   //tornado
