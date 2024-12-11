@@ -55,48 +55,52 @@ body {
   grid-template-columns: 52% 45%;
   justify-content: space-between;
 
-  #weather-report-form {
-    padding: var(--spacing);
-    max-height: min-content;
+  #weather-results-left-section {
+    /* background-color: red; */
 
-    background-color: lightblue;
-    border: white 10px solid;
-    border-radius: var(--spacing);
-    box-shadow: 5px 5px 5px black;
+    #weather-report-form {
+      padding: var(--spacing);
+      max-height: min-content;
 
-    display: flex;
-    flex-direction: column;
+      background-color: lightblue;
+      border: white 10px solid;
+      border-radius: var(--spacing);
+      box-shadow: 5px 5px 5px black;
 
-    .form-line {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: var(--spacing);
-    }
+      display: flex;
+      flex-direction: column;
 
-    #unit-input-form-section {
-      display: inline;
+      .form-line {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: var(--spacing);
+      }
 
-      max-width: fit-content;
-    }
+      #unit-input-form-section {
+        display: inline;
 
-    input[type="text"] {
-      display: inline;
-      padding: 0 calc(0.25 * var(--spacing));
-    }
+        max-width: fit-content;
+      }
 
-    button {
-      display: block;
-      padding: calc(0.25 * var(--spacing));
+      input[type="text"] {
+        display: inline;
+        padding: 0 calc(0.25 * var(--spacing));
+      }
 
-      margin-top: calc(0.5 * var(--spacing));
+      button {
+        display: block;
+        padding: calc(0.25 * var(--spacing));
 
-      border-radius: calc(0.5 * var(--spacing));
+        margin-top: calc(0.5 * var(--spacing));
 
-      background-color: white;
+        border-radius: calc(0.5 * var(--spacing));
 
-      &:hover {
-        transform: scale(1.01);
-        cursor: pointer;
+        background-color: white;
+
+        &:hover {
+          transform: scale(1.01);
+          cursor: pointer;
+        }
       }
     }
   }

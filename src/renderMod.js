@@ -82,7 +82,7 @@ function handleWeatherReportError(error) {
   );
 }
 
-function getEmoji(conditions) {
+export function getEmoji(conditions) {
   const formatCond = conditions.toLowerCase();
   //init to error
   let emoji = "🚫";
@@ -165,7 +165,7 @@ function getEmoji(conditions) {
   return { emoji, emojiDescript };
 }
 
-function getMasonQuote(emoji) {
+export function getMasonQuote(emoji) {
   let quote;
   let quoteSrc;
 
@@ -195,6 +195,13 @@ function getMasonQuote(emoji) {
   if (emoji === "wind") {
     quote = `"Gimme a jacket. Leather. Black."`;
     quoteSrc = `Mason Storm: UNLEASHED (S1E8)`;
+  }
+
+  //smoke
+  //   if (emoji === "️‍🔥") {
+  if (emoji === "smoke") {
+    quote = `"See that smoke on the horizon? That's Comanche..."`;
+    quoteSrc = `Mason Storm Tames the West (TV Special)`;
   }
 
   //snow

@@ -10,9 +10,13 @@ const locationInputElm = document.querySelector("#location-input");
 
 // ====================================== Init ====================================== //
 
+//creates the demo buttons
+import * as demoButtonsMod from "./demoButtonsMod.js";
+
 //ui
 locationInputElm.addEventListener("click", locationInputElm.select);
 
+//add EL
 weatherReportForm.addEventListener("submit", (event) => {
   //stop form submit
   event.preventDefault();
@@ -30,3 +34,7 @@ weatherReportForm.addEventListener("submit", (event) => {
 
   renderMod.showWeatherReport();
 });
+
+//init weather
+const stormDemoBtn = document.querySelector("#storm-demo-btn");
+stormDemoBtn.click();

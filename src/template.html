@@ -14,40 +14,42 @@
     </div>
 
     <div id="weather-results-section">
-      <form id="weather-report-form" novalidate>
-        <div class="form-line">
-          <input
-            type="text"
-            name="location-input"
-            id="location-input"
-            placeholder="Enter search location"
-          />
-          <div class="form-line" id="unit-input-form-section">
-            <label for="f-unit-input">
-              F°
-              <input
-                type="radio"
-                name="unit-input"
-                id="f-unit-input"
-                value="us"
-                checked
-              />
-            </label>
-            <label for="c-unit-input">
-              C°
-              <input
-                type="radio"
-                name="unit-input"
-                id="c-unit-input"
-                value="uk"
-              />
-            </label>
+      <div id="weather-results-left-section">
+        <form id="weather-report-form" novalidate>
+          <div class="form-line">
+            <input
+              type="text"
+              name="location-input"
+              id="location-input"
+              placeholder="Enter search location"
+            />
+            <div class="form-line" id="unit-input-form-section">
+              <label for="f-unit-input">
+                F°
+                <input
+                  type="radio"
+                  name="unit-input"
+                  id="f-unit-input"
+                  value="us"
+                  checked
+                />
+              </label>
+              <label for="c-unit-input">
+                C°
+                <input
+                  type="radio"
+                  name="unit-input"
+                  id="c-unit-input"
+                  value="uk"
+                />
+              </label>
+            </div>
           </div>
-        </div>
-        <button id="weather-search-btn">
-          What's the weather like, Mason?!
-        </button>
-      </form>
+          <button id="weather-search-btn">
+            What's the weather like, Mason?!
+          </button>
+        </form>
+      </div>
 
       <div id="weather-card">
         <div id="weather-info">
