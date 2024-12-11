@@ -6,86 +6,81 @@
     <title>The Offical Mason Storm Weather App</title>
   </head>
   <body>
-    <div id="title-seciton">
+    <div id="title-section">
       <h1>The Offical Mason Storm Weather App</h1>
-      <div>There a <i>Storm</i> coming...</div>
-      <div>Find out where below!</div>
-    </div>
-
-    <form id="weather-report-form" novalidate>
-      <fieldset>
-        <div class="form-line" id="unit-input-form-section">
-          <label for="f-unit-input">
-            F°
-            <input
-              type="radio"
-              name="unit-input"
-              id="f-unit-input"
-              value="us"
-              checked
-            />
-          </label>
-          <label for="c-unit-input">
-            C°
-            <input
-              type="radio"
-              name="unit-input"
-              id="c-unit-input"
-              value="uk"
-            />
-          </label>
+      <div id="subtitle-section">
+        <div>
+          There a <strong><i>Storm</i></strong> coming...
         </div>
-        <input
-          type="text"
-          name="location-input"
-          id="location-input"
-          placeholder="Enter search location"
-        />
-        <button id="weather-search-btn">
-          What's the weather like, Mason?!
-        </button>
-      </fieldset>
-    </form>
-    <div id="weather-results-section">
-      <div id="weather-card">
-        <div id="report-address">
-          <!-- from js -->
-        </div>
-        <div id="condition-report">
-          <!-- from js -->
-        </div>
-        <div id="temp-report">
-          <!-- from js -->
-        </div>
-        <div id="weather-emoji">
-          <!-- from js -->
-        </div>
-        <div id="mason-quote-container">
-          <div id="mason-quote">
-            <!-- from js -->
-          </div>
-          <div id="mason-quote-src">
-            <!-- from js -->
-          </div>
-        </div>
+        <div>Find out where below!</div>
       </div>
     </div>
 
-    <img
-      src="./images/masonWeather.png"
-      alt="the world's most badass weatherman"
-      id="mason-weatherman-img"
-    />
+    <form id="weather-report-form" novalidate>
+      <div class="form-line" id="unit-input-form-section">
+        <label for="f-unit-input">
+          F°
+          <input
+            type="radio"
+            name="unit-input"
+            id="f-unit-input"
+            value="us"
+            checked
+          />
+        </label>
+        <label for="c-unit-input">
+          C°
+          <input type="radio" name="unit-input" id="c-unit-input" value="uk" />
+        </label>
+      </div>
+      <input
+        type="text"
+        name="location-input"
+        id="location-input"
+        placeholder="Enter search location"
+      />
+      <button id="weather-search-btn">What's the weather like, Mason?!</button>
+    </form>
+    <div id="weather-results-section">
+      <div id="weather-card">
+        <div id="weather-info">
+          <div id="report-address">
+            <!-- from js -->
+          </div>
+          <div id="condition-report">
+            <!-- from js -->
+          </div>
+          <div id="temp-report">
+            <!-- from js -->
+          </div>
+          <div id="weather-emoji">
+            <!-- from js -->
+          </div>
+        </div>
 
-    <!-- disclaimers -->
-    <div class="disclaimer">
-      Disclaimer: The real Mason may or may not actually know the weather at any
-      given time.
-    </div>
-    <div class="disclaimer">
-      Disclaimer #2: On the off chance that the real Mason actually did know the
-      weather, it is merely a coinsidence and ROCKET SHUTTER DIGITAL LLC does
-      not claim responsibility for said weather.
+        <div id="quote-section">
+          <div id="mason-quote-container">
+            <div id="mason-quote">
+              <!-- from js -->
+            </div>
+            <div id="mason-quote-src">
+              <!-- from js -->
+            </div>
+          </div>
+        </div>
+
+        <div id="disclaimers">
+          <div class="disclaimer">
+            Disclaimer: The real Mason may or may not actually know the weather
+            at any given time.
+          </div>
+          <div class="disclaimer">
+            Disclaimer #2: On the off chance that the real Mason actually did
+            know the weather, it is merely a coinsidence and ROCKET SHUTTER
+            DIGITAL LLC does not claim responsibility for said weather.
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
