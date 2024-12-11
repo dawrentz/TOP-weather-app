@@ -5,6 +5,10 @@
 :root {
   /* variables */
   --spacing: 1rem;
+  --main-color: lightblue;
+
+  background-image: url(https://news.harvard.edu/wp-content/uploads/2024/08/Lightning2500.jpg?w=1680&h=945&crop=1);
+  background-color: darkred;
 
   /* debugging */
   * {
@@ -13,9 +17,10 @@
 }
 
 body {
-  background-color: lightblue;
+  background-color: var(--main-color);
   font-family: Arial, Helvetica, sans-serif;
 
+  min-width: 57.5rem;
   max-width: 57.5rem;
   margin: auto;
 
@@ -28,34 +33,87 @@ body {
 
   h1 {
     font-size: 3rem;
+    text-align: center;
   }
   #subtitle-section {
-    font-size: larger;
-    margin-left: 2rem;
+    font-size: 1.5rem;
+    /* margin-left: 2rem; */
+    text-align: center;
   }
-}
-
-#weather-report-form {
-  padding-bottom: var(--spacing);
 }
 
 #weather-results-section {
   padding: var(--spacing);
   width: 100%;
+  height: 41rem;
 
   background-image: url("./images/masonWeather.png");
   background-size: 100%;
   background-repeat: no-repeat;
 
+  display: grid;
+  grid-template-columns: 52% 45%;
+  justify-content: space-between;
+
+  #weather-report-form {
+    padding: var(--spacing);
+    max-height: min-content;
+
+    background-color: lightblue;
+    border: white 10px solid;
+    border-radius: var(--spacing);
+    box-shadow: 5px 5px 5px black;
+
+    display: flex;
+    flex-direction: column;
+
+    .form-line {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: var(--spacing);
+    }
+
+    #unit-input-form-section {
+      display: inline;
+
+      max-width: fit-content;
+    }
+
+    input[type="text"] {
+      display: inline;
+      padding: 0 calc(0.25 * var(--spacing));
+    }
+
+    button {
+      display: block;
+      padding: calc(0.25 * var(--spacing));
+
+      margin-top: calc(0.5 * var(--spacing));
+
+      border-radius: calc(0.5 * var(--spacing));
+
+      background-color: white;
+
+      &:hover {
+        transform: scale(1.01);
+        cursor: pointer;
+      }
+    }
+  }
+
   #weather-card {
     padding: var(--spacing);
-    width: 45%;
     margin-left: auto;
+    min-height: 39rem;
+    max-height: 39rem;
 
     background-color: white;
     border: lightblue 10px solid;
     border-radius: var(--spacing);
     box-shadow: 5px 5px 5px black;
+
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
 
     #weather-info {
       #report-address {
@@ -73,18 +131,40 @@ body {
       }
 
       #weather-emoji {
-        font-size: 10rem;
+        font-size: 9rem;
         text-align: center;
+      }
+    }
+
+    .spacer {
+      display: grid;
+      align-content: center;
+
+      padding: calc(0.5 * var(--spacing)) 0;
+
+      .spacer-line {
+        height: 0.5px;
+        background-color: black;
       }
     }
 
     #mason-quote-container {
       #mason-quote {
         font-style: italic;
+        text-align: center;
       }
       #mason-quote-src {
-        margin-left: 2rem;
+        text-align: center;
       }
     }
+
+    #disclaimers {
+      font-size: smaller;
+    }
   }
+}
+
+#credits {
+  text-align: center;
+  font-size: smaller;
 }

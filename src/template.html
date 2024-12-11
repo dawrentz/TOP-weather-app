@@ -9,36 +9,46 @@
     <div id="title-section">
       <h1>The Offical Mason Storm Weather App</h1>
       <div id="subtitle-section">
-        There a <strong><i>Storm</i></strong> coming... Find out where below!
+        There's a <strong><i>Storm</i></strong> coming... find out where below!
       </div>
     </div>
 
-    <form id="weather-report-form" novalidate>
-      <div class="form-line" id="unit-input-form-section">
-        <label for="f-unit-input">
-          F°
-          <input
-            type="radio"
-            name="unit-input"
-            id="f-unit-input"
-            value="us"
-            checked
-          />
-        </label>
-        <label for="c-unit-input">
-          C°
-          <input type="radio" name="unit-input" id="c-unit-input" value="uk" />
-        </label>
-      </div>
-      <input
-        type="text"
-        name="location-input"
-        id="location-input"
-        placeholder="Enter search location"
-      />
-      <button id="weather-search-btn">What's the weather like, Mason?!</button>
-    </form>
     <div id="weather-results-section">
+      <form id="weather-report-form" novalidate>
+        <div class="form-line">
+          <input
+            type="text"
+            name="location-input"
+            id="location-input"
+            placeholder="Enter search location"
+          />
+          <div class="form-line" id="unit-input-form-section">
+            <label for="f-unit-input">
+              F°
+              <input
+                type="radio"
+                name="unit-input"
+                id="f-unit-input"
+                value="us"
+                checked
+              />
+            </label>
+            <label for="c-unit-input">
+              C°
+              <input
+                type="radio"
+                name="unit-input"
+                id="c-unit-input"
+                value="uk"
+              />
+            </label>
+          </div>
+        </div>
+        <button id="weather-search-btn">
+          What's the weather like, Mason?!
+        </button>
+      </form>
+
       <div id="weather-card">
         <div id="weather-info">
           <div id="report-address">
@@ -64,9 +74,7 @@
           </div>
         </div>
 
-        <div id="spacer">
-          <div id="spaceer-lin"></div>
-        </div>
+        <div class="spacer" id="flex-spacer"></div>
 
         <div id="disclaimers">
           <div class="disclaimer">
@@ -76,16 +84,22 @@
               given time.
             </i>
           </div>
+
+          <div class="spacer">
+            <div class="spacer-line"></div>
+          </div>
+
           <div class="disclaimer">
             <strong>Disclaimer #2:</strong>
             <i>
               On the off chance that the real Mason actually did know the
-              weather, it is merely a coinsidence and ROCKET SHUTTER DIGITAL LLC
+              weather, it's merely a coinsidence and ROCKET SHUTTER DIGITAL LLC
               does not claim responsibility for said weather.
             </i>
           </div>
         </div>
       </div>
     </div>
+    <div id="credits">Powered by pure testosterone</div>
   </body>
 </html>
