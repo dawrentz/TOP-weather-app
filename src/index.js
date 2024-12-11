@@ -24,8 +24,8 @@ weatherReportForm.addEventListener("submit", (event) => {
     "Searching...", // resolvedAddress
     "", // unitGroup
     "🔍", // emoji
-    "", // quote
-    "" // quoteSrc
+    `"Hang out, while I figure out what's goin' on...`, // quote
+    `<u>Mason Storm II</u>` // quoteSrc
   );
 
   renderMod.showWeatherReport();

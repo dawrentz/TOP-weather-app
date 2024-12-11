@@ -16,8 +16,10 @@ body {
   background-color: lightblue;
   font-family: Arial, Helvetica, sans-serif;
 
+  max-width: 57.5rem;
+  margin: auto;
+
   > * {
-    padding: 0 var(--spacing);
   }
 }
 
@@ -25,10 +27,11 @@ body {
   padding-bottom: var(--spacing);
 
   h1 {
-    text-decoration: underline;
+    font-size: 3rem;
   }
   #subtitle-section {
     font-size: larger;
+    margin-left: 2rem;
   }
 }
 
@@ -42,13 +45,46 @@ body {
 
   background-image: url("./images/masonWeather.png");
   background-size: 100%;
-  /* background-position: 0 -20rem; */
+  background-repeat: no-repeat;
 
   #weather-card {
     padding: var(--spacing);
-    width: 50%;
+    width: 45%;
     margin-left: auto;
 
     background-color: white;
+    border: lightblue 10px solid;
+    border-radius: var(--spacing);
+    box-shadow: 5px 5px 5px black;
+
+    #weather-info {
+      #report-address {
+        text-align: center;
+        font-size: large;
+        font-weight: bold;
+      }
+
+      #condition-report {
+        text-align: center;
+      }
+
+      #temp-report {
+        text-align: center;
+      }
+
+      #weather-emoji {
+        font-size: 10rem;
+        text-align: center;
+      }
+    }
+
+    #mason-quote-container {
+      #mason-quote {
+        font-style: italic;
+      }
+      #mason-quote-src {
+        margin-left: 2rem;
+      }
+    }
   }
 }

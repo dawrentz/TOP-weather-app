@@ -34,7 +34,8 @@ export function renderWeatherInfo(
   reportAddressElm.textContent = resolvedAddress;
   weatherEmojiElm.textContent = emoji;
   masonQuoteElm.textContent = quote;
-  masonQuoteSrcElm.textContent = quoteSrc;
+  // masonQuoteSrcElm.textContent = quoteSrc;
+  masonQuoteSrcElm.innerHTML = `- <u>${quoteSrc}</u>`;
 
   if (unitGroup === "us") {
     tempuratureReportElm.textContent = `${temp} F°`;
@@ -87,6 +88,16 @@ function getEmoji(conditions) {
   let emoji = "🚫";
   let emojiDescript = "error";
 
+  //cloud
+  if (
+    formatCond.includes("cloud") ||
+    formatCond.includes("overcast") ||
+    formatCond.includes("cover")
+  ) {
+    emoji = "️☁️";
+    emojiDescript = "cloud";
+  }
+
   //wind
   if (formatCond.includes("wind") || formatCond.includes("squall")) {
     emoji = "️💨";
@@ -113,16 +124,6 @@ function getEmoji(conditions) {
   if (formatCond.includes("dust") || formatCond.includes("smoke")) {
     emoji = "️‍🔥";
     emojiDescript = "smoke";
-  }
-
-  //cloud
-  if (
-    formatCond.includes("cloud") ||
-    formatCond.includes("overcast") ||
-    formatCond.includes("cover")
-  ) {
-    emoji = "️☁️";
-    emojiDescript = "cloud";
   }
 
   //rain
