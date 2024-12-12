@@ -16,14 +16,11 @@ export async function getWeather(locationInput) {
 
   try {
     //using free api
+    //resolved address doesnt always return english. A geolocation API is needed?
     weatherData = await fetch(
       `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${locationInput}/${today}?unitGroup=${unitGroup}&lang=en&key=3LTVBASAQ7PVLZQWD6V4TN9MQ`
     );
     const weatherJSON = await weatherData.json();
-
-    //test
-    console.log(weatherData);
-    console.log(weatherJSON);
 
     //not all locations have "currentConditions" prop, use days[0] if so
     if (!weatherJSON.currentConditions) {
@@ -45,7 +42,7 @@ export async function getWeather(locationInput) {
     return weatherResultsObject;
   } catch (err) {
     //return err means handling error outside of catch (needed because splitting getWeather and renderWeather?)
-    //return also means "the promise is 'resolved', not 'rejected'" (screws up .then in the funciton call)
+    //return err also means "the promise is 'resolved', not 'rejected'" (screws up .then in the funciton call)
     throw weatherData.status;
   }
 }

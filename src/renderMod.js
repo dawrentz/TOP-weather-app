@@ -13,12 +13,12 @@ const locationInputElm = document.querySelector("#location-input");
 const conditionReportElm = document.querySelector("#condition-report");
 
 // ====================================== Major Functions ====================================== //
+
 export function showWeatherReport() {
   const searchInput = getLocationInput();
   const weatherReport = getWeatherMod.getWeather(searchInput);
 
   weatherReport.then(handleWeatherReport).catch(handleWeatherReportError);
-  //   weatherReport.then(console.log("from then"));
 }
 
 export function renderWeatherInfo(
@@ -34,7 +34,6 @@ export function renderWeatherInfo(
   reportAddressElm.textContent = resolvedAddress;
   weatherEmojiElm.textContent = emoji;
   masonQuoteElm.textContent = quote;
-  // masonQuoteSrcElm.textContent = quoteSrc;
   masonQuoteSrcElm.innerHTML = `- <u>${quoteSrc}</u>`;
 
   if (unitGroup === "us") {
@@ -170,7 +169,7 @@ export function getMasonQuote(emoji) {
   let quoteSrc;
 
   //for some reason, the passed through emoji will NOT be recogonized as the same emoji
-  //going back to getEmoji() and returning an "emoji emojiDescriptor" that can be looked the quote up here
+  //Solution: going back to getEmoji() and returning an "emoji emojiDescriptor" that can be looked the quote up here
   //it has something to do with the emoji being found in another function, things seem to work if the emoji variable is global
   //try it out here (need a cloudy location)
   //   console.log(emoji); //returns ☁️
@@ -249,7 +248,7 @@ export function getMasonQuote(emoji) {
   //storm
   //   if (emoji === "⛈️") {
   if (emoji === "storm") {
-    quote = `There's a STORM comin'!!!"`;
+    quote = `"There's a STORM comin'!!!"`;
     quoteSrc = `Mason Storm (Theatrical Cut)`;
   }
 

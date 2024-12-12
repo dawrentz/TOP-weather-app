@@ -21,6 +21,7 @@ const conditions = [
 ];
 
 // ====================================== Init ====================================== //
+
 conditions.forEach((condition) => {
   renderDemoButton(condition);
 });
@@ -39,6 +40,7 @@ function renderDemoButton(textContentArg) {
 }
 
 // ====================================== Lesser Functions ====================================== //
+
 function demoBtnClick(btn) {
   const condition = btn.textContent;
   const { emoji, emojiDescript } = renderMod.getEmoji(condition);
