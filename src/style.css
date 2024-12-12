@@ -87,7 +87,7 @@ body {
         max-width: fit-content;
       }
 
-      input[type="text"] {
+      input#location-input {
         display: inline;
         padding: 0 calc(0.25 * var(--spacing));
 
