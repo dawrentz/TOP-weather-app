@@ -72,8 +72,8 @@ function handleWeatherReportError(error) {
   const { quote, quoteSrc } = getMasonQuote(emojiDescript);
 
   renderWeatherInfo(
-    "", // conditions
-    "", // temp
+    "Error", // conditions
+    "Error", // temp
     "Invalid Search", // resolvedAddress
     "", // unitGroup
     emoji, // emoji

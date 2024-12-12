@@ -9,6 +9,8 @@
 
   background-image: url(https://news.harvard.edu/wp-content/uploads/2024/08/Lightning2500.jpg?w=1680&h=945&crop=1);
   background-color: darkred;
+  background-size: cover;
+  background-repeat: no-repeat;
 
   /* debugging */
   * {
@@ -22,18 +24,20 @@ body {
 
   min-width: 57.5rem;
   max-width: 57.5rem;
+  min-height: 100vh;
   margin: auto;
 
-  > * {
-  }
+  display: grid;
+  grid-template-rows: auto auto 1fr;
 }
 
 #title-section {
   padding-bottom: var(--spacing);
 
   h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
   #subtitle-section {
     font-size: 1.5rem;
@@ -42,6 +46,7 @@ body {
   }
 }
 
+/* poorly named */
 #weather-results-section {
   padding: var(--spacing);
   width: 100%;
@@ -85,6 +90,18 @@ body {
       input[type="text"] {
         display: inline;
         padding: 0 calc(0.25 * var(--spacing));
+
+        border: gray solid 2px;
+        border-radius: 0.25rem;
+
+        &:hover,
+        &:focus {
+          appearance: none;
+          /* add to reset.css? */
+          outline: none;
+
+          border: black solid 2px;
+        }
       }
 
       button {
@@ -100,6 +117,42 @@ body {
         &:hover {
           transform: scale(1.01);
           cursor: pointer;
+        }
+      }
+    }
+
+    #demo-btns-section {
+      #demo-btns-title {
+        margin-top: calc(0.5 * var(--spacing));
+
+        color: yellow;
+        font-size: xx-large;
+        font-weight: bold;
+        text-align: center;
+        text-decoration: underline;
+      }
+
+      #demo-btns-container {
+        margin-top: calc(0.25 * var(--spacing));
+
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        column-gap: calc(0.5 * var(--spacing));
+        row-gap: calc(0.5 * var(--spacing));
+        .demo-btn {
+          padding: calc(0.1 * var(--spacing)) calc(0.5 * var(--spacing));
+
+          border-radius: calc(0.5 * var(--spacing));
+          background-color: white;
+
+          border: none;
+
+          &:hover {
+            cursor: pointer;
+            background-color: var(--main-color);
+            transform: scale(1.1);
+          }
         }
       }
     }

@@ -4,9 +4,7 @@
 import * as renderMod from "./renderMod.js";
 
 //declarations
-const weatherResultsLeftSectionElm = document.querySelector(
-  "#weather-results-left-section"
-);
+const demoBtnsContainerElm = document.querySelector("#demo-btns-container");
 
 const conditions = [
   "error",
@@ -37,7 +35,7 @@ function renderDemoButton(textContentArg) {
   demoBtn.textContent = capFirstLetter(textContentArg);
 
   demoBtn.addEventListener("click", () => demoBtnClick(demoBtn));
-  weatherResultsLeftSectionElm.appendChild(demoBtn);
+  demoBtnsContainerElm.appendChild(demoBtn);
 }
 
 // ====================================== Lesser Functions ====================================== //
@@ -48,9 +46,9 @@ function demoBtnClick(btn) {
 
   renderMod.renderWeatherInfo(
     condition, // conditions
-    "32", // temp
+    "Demo Temp", // temp
     "Demo Location", // resolvedAddress
-    "us", // unitGroup
+    "", // unitGroup
     emoji, // emoji
     quote, // quote
     quoteSrc // quoteSrc
